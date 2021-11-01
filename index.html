@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Jungle Memory Match Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <audio class="hidden" src="sounds/jungle.wav" autoplay></audio>
+
+        <div class="modal hidden">
+            <button class="close-modal">&times;</button>
+            <h1 class = "modal-msg">.</h1>
+        </div>
+        <div class="overlay hidden"></div>
+
+        <h1>Welcome to the jungle!!!</h1>
+
+        <section>
+            <div class="gameSet">
+                <div class = "board">
+                    <div type = "button" class = "card" id = "card-0">
+                        <img class="card-front" src="images/bear.jpg" alt="Bear picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-1">
+                        <img class="card-front" src="images/bear.jpg" alt="Bear picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-2">
+                        <img class="card-front" src="images/dear.jpg" alt="Dear picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-3">
+                        <img class="card-front" src="images/dear.jpg" alt="Dear picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-4">
+                        <img class="card-front" src="images/frog.jpg" alt="Frog picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-5">
+                        <img class="card-front" src="images/frog.jpg" alt="Frog picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-6">
+                        <img class="card-front" src="images/lioness.jpg" alt="Lioness picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-7">
+                        <img class="card-front" src="images/lioness.jpg" alt="Lioness picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-8">
+                        <img class="card-front" src="images/macaw.jpg" alt="Macaw picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-9">
+                        <img class="card-front" src="images/macaw.jpg" alt="Macaw picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-10">
+                        <img class="card-front" src="images/monkey.jpg" alt="Monkey picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-11">
+                        <img class="card-front" src="images/monkey.jpg" alt="Monkey picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-12">
+                        <img class="card-front" src="images/snake.jpg" alt="Snake picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-13">
+                        <img class="card-front" src="images/snake.jpg" alt="Snake picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-14">
+                        <img class="card-front" src="images/toucan.jpg" alt="Toucan picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                    <div type = "button" class = "card" id = "card-15">
+                        <img class="card-front" src="images/toucan.jpg" alt="Toucan picture">
+                        <img class="card-back" src="images/card-back.jpg" alt="Card cover">
+                    </div>
+                </div>
+                
+                <div class = "sideControl">
+                    <div class = "sidebox">
+                        <h3>Total Flips: <span id = "total-flips">0</span></h3>
+                        <h3>Matched Flips: <span id = "total-matched">0</span></h3>
+                        <button type="button" class="btn-start">START</button>
+                        <button type="button" class="btn-restart">RESTART</button>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </section>
+        
+        <script src="script.js" async defer></script>
+    </body>
+</html>

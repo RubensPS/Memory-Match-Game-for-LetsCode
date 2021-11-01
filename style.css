@@ -1,0 +1,190 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 650px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+
+body {
+    background-image: url('images/jungle.jpg');
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Fruktur', cursive;
+    font-size: 350%;
+    color: rgb(0, 255, 0);
+    text-shadow: 1rem 1rem 2rem rgb(43, 141, 43);
+}
+
+h3 {
+    font-family: 'Fruktur', cursive;
+    color: rgb(255, 0, 0);
+    padding-top: 30%;
+    align-self: center;
+    text-align: center;
+    font-size: 250%;
+    font-weight: 500;
+}
+
+.gameSet {
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr 1fr;   
+}
+
+.board {
+    position: relative;
+    grid-column-start: 2;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.sideControl {
+    grid-column-start: 3;
+}
+
+.sideBox {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.btn-start {
+    border-color: black;
+    border-radius: 0.5rem;
+    background-color: green;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    margin: 20% 8%;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 0.2rem rgb(22, 22, 22);
+}
+
+.btn-start:hover {
+    background-color: rgb(1, 73, 1);
+}
+.btn-start:active {
+    transform: translateY(0.2rem);
+    box-shadow: 0 0;
+}
+
+.btn-restart {
+    border-color: black;
+    border-radius: 0.5rem;
+    background-color: yellow;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    margin: 30% 0%;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 0.2rem rgb(22, 22, 22);
+}
+
+.btn-restart:hover {
+    background-color: rgb(1, 73, 1);
+}
+
+.btn-restart:active {
+    transform: translateY(0.2rem);
+    box-shadow: 0 0;
+}
+
+.btn-overlay {
+    background-color: rgba(0, 0, 0, 0);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.card {
+    width: 20%;
+    height: 7rem;
+    margin: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    perspective: 1000;
+    transform-style: preserve-3d;
+}
+
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    backface-visibility: hidden;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    font-size: 5rem;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 6rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+  
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+
+.modal-msg {
+    color: goldenrod;
+}
