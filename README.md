@@ -46,26 +46,13 @@ For the proper function of the program, a few functions were created, so they co
 - **flipCheck**: This function is used as the imput for the *addEventLisener* attatched to all the cards, and is the base of the game. After game starts, everytime
 the player clicks a card on the screen, it will call this function.
 
-```mermaid
-graph TD
-A(Start) --> B[Check locked or same card] --true--> C((Exit))
-B --false--> D[Flip card] --> E[Check isFirstFlipped]
-E --true--> F[Set first card] --> G((Exit))
-E --false--> H[Set second card] --> I[Call pairCheck]
-I --> J((Exit))
-```
+![flipCheck Function Flowchart ](images/flipCheck.png)
 
 - **pairCheck**: This function checks if the two cards flipped are equal. The comparison is made using the values stored in the *firstCard* and *secondCard* variables.
 It actualy checks if the *.innerHTML* element properties are the same on both. This is possible because the *.innerHTML* from each card has the exact same structure, only
 differing on the card picture path. So, if the path is the same, the properties are the same. 
 
-```mermaid
-graph TD
-A(Start) --> B[Check firstCard equals secondCard] --true--> C[Call fixPair]
-C --> D[Add 1 to totalFlip and totalMatch] --> E[Call rightSound] --> F[Check totalMatch equals 8] --true--> G[Call winSound + Pop win msg] --> H((Exit))
-F --false--> I((Exit))
-B --false--> J[Add 1 to totalFlip] --> K[Call unflipPair] --> L[Call wrongSound] --> M((Exit))
-```
+![pairCheck Function Flowchart ](images/pairCheck.png)
 
 - **fixPair**: This function just removes the click event from the cards when they match.
 
