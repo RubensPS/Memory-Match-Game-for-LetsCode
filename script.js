@@ -26,9 +26,11 @@ function flipCheck () {
         return;
     }
 
+    if (!isFirstFlipped) {
     secondCard = this;
     isFirstFlipped = true;
-    
+    }
+
     pairCheck();
 }
 
@@ -101,18 +103,17 @@ function shuffle (shuffledDeck) {
 btnStart.addEventListener('click', e => {
     if (e && !started) {
         alert("Good luck adventurer! You have 5 seconds to memorize the pattern.")
-        started = true;
         btnStartBlock();
         btnRestartBlock();
         shuffle();
         timer();
-        locked = false;
     }
 })
 
 btnRestart.addEventListener('click', e => {
     if (e && started) {
         if (window.confirm('Do you want to restart the game? The deck will be shuffled again!')) {
+            locked = true
             btnStartBlock();
             btnRestartBlock();
             shuffle();
@@ -121,7 +122,10 @@ btnRestart.addEventListener('click', e => {
             document.querySelector('#total-flips').textContent = `${totalFlips}`;
             totalMatched = 0;
             document.querySelector('#total-matched').textContent = '0';
-            locked = false;
+            isFirstFlipped = true;
+            firstCard = undefined;
+            secondCard = undefined;
+            cards.forEach(card => {card.addEventListener('click', flipCheck)});
         }
     }
 })
@@ -138,6 +142,8 @@ function timer () {
     
     setTimeout (() => {
         cards.forEach(card => {card.classList.remove('flip')});
+        started = true;
+        locked = false;
     }, 6500)
 } 
 
